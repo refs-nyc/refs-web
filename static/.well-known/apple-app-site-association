@@ -1,0 +1,27 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": [
+          "V39Z3N4NPJ.refs-nyc.app"
+        ],
+        "components": [
+          {
+            "/": "*",
+            "comment": "Matches all routes"
+          }
+        ]
+      }
+    ]
+  },
+  "activitycontinuation": {
+    "apps": [
+      "V39Z3N4NPJ.refs-nyc.app"
+    ]
+  },
+  "webcredentials": {
+    "apps": [
+      "V39Z3N4NPJ.refs-nyc.app"
+    ]
+  }
+}
