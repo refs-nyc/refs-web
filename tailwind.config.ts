@@ -1,13 +1,29 @@
-import forms from '@tailwindcss/forms';
-import typography from '@tailwindcss/typography';
+import flowbitePlugin from 'flowbite/plugin'
+
 import type { Config } from 'tailwindcss';
 
 export default {
-	content: ['./src/**/*.{html,js,svelte,ts}'],
-
+	content: ['./src/**/*.{html,js,svelte,ts}', './node_modules/flowbite-svelte/**/*.{html,js,svelte,ts}'],
+  darkMode: 'selector',
 	theme: {
-		extend: {}
+		extend: {
+      colors: {
+        // flowbite-svelte
+        primary: {
+          50: '#7f70b8',
+          100: '#7f70b8',
+          200: '#7f70b8',
+          300: '#7f70b8',
+          400: '#7f70b8',
+          500: '#7f70b8',
+          600: '#7f70b8',
+          700: '#7f70b8',
+          800: '#7f70b8',
+          900: '#7f70b8'
+        }
+      }
+    }
 	},
 
-	plugins: [typography, forms]
-} satisfies Config;
+	plugins: [flowbitePlugin]
+} as Config;
