@@ -20,7 +20,11 @@ export default {
           700: '#7f70b8',
           800: '#7f70b8',
           900: '#7f70b8'
-        }
+        },
+        accent: 'var(--accent)',
+        accent2: 'var(--accent2)',
+        surface: 'var(--surface)',
+        surface2: 'var(--surface2)',
       }
     }
 	},

@@ -1,6 +1,8 @@
 <script>
 	import '../app.css';
 	let { children } = $props();
+
+  import Navigation from "$lib/Navigation.svelte"
 </script>
 
 <svelte:head>
@@ -9,11 +11,9 @@
   </title>
 </svelte:head>
 
+<Navigation />
+
 <div class="layout inter-400">
-  <a href="/" class="flex flex-col items-center justify-center text-xl mb-6">
-    <img class="w-16" src="/icon.png" alt="Refs" />
-    <h1 class="inter-700 l">Refs</h1>
-  </a>
 	{@render children()}
 </div>
 

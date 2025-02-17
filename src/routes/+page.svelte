@@ -1,4 +1,5 @@
 <script lang="ts">
+	import SearchAnimation from '$lib/SearchAnimation.svelte';
     import { Toggle } from 'flowbite-svelte';
     import { Input, Label, Button } from 'flowbite-svelte';
     import PocketBase from 'pocketbase'
@@ -26,7 +27,6 @@
       } finally {
         disabled = false
       }
-      // console.log("on submit")
     }
 
     $effect(() => {
@@ -34,8 +34,21 @@
     })
 </script>
 
+<div class="max-w-screen-xl mx-auto px-4 lg:px-0">
+  <div class="min-h-[90vh] grid grid-cols-2 gap-4 items-center">
+    <h1 class="h1xlnormal">
+      <span class="h1xl">
+        Stop waiting for an algorithm to tell you who to meet.  </span>
+        <span>
+          Find them yourself.
+        </span>
+    </h1>
+
+    <SearchAnimation />
+  </div>
+</div>
+
 <form onsubmit={onSubmit} action="/" class="signup-form flex flex-col gap-4 w-screen p-8 sm:w-auto sm:min-w-[400px]">
-  
   <div class="w-full">
     <Label for="email" class="mb-2">Sign up for early access</Label>
     <Input bind:value={email} type="text" id="email" placeholder="you@me.us" required />
@@ -60,11 +73,11 @@
 </form>
 
 {#if success}
-<div onclick={() => { success = false }} class="fixed inset-0 flex flex-col justify-center items-center bg-[#efede3]/10 backdrop-blur-sm">
-  <div class="bg-white drop-shadow-lg w-[460px] h-[140px] flex flex-col justify-center items-center text-center inter-500 rounded-md">
-    <h1 class="mb-2 rounded-sm">Thanks for signing up!<br><br> We'll send you an invitation to our beta soon</h1>
+  <div onclick={() => { success = false }} class="fixed inset-0 flex flex-col justify-center items-center bg-[#efede3]/10 backdrop-blur-sm">
+    <div class="bg-white drop-shadow-lg w-[460px] h-[140px] flex flex-col justify-center items-center text-center inter-500 rounded-md">
+      <h1 class="mb-2 rounded-sm">Thanks for signing up!<br><br> We'll send you an invitation to our beta soon</h1>
+    </div>
   </div>
-</div>
 {/if}
 
 <style>
