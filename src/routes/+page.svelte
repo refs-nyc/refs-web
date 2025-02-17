@@ -1,92 +1,70 @@
 <script lang="ts">
 	import SearchAnimation from '$lib/SearchAnimation.svelte';
-    import { Toggle } from 'flowbite-svelte';
-    import { Input, Label, Button } from 'flowbite-svelte';
-    import PocketBase from 'pocketbase'
+  import { onMount } from "svelte"
+  import { fade } from "svelte/transition"
 
-    const pocketbase = new PocketBase("https://refs.enabler.space")
+	import Ticker from '$lib/Ticker.svelte';
+  
+  let showTagline = $state(false)
     
-    let checked = $state(false)
-    let email = $state("")
-    let cell = $state("")
-    let disabled = $state(false)
-    let success = $state(false)
 
-    let os = "android"
 
-    const onSubmit = async (e) => {
-      e.preventDefault()
-      disabled = true
-
-      try {
-        console.log(os, email, cell)
-        const record = await pocketbase.collection("signups").create({ email, os, cell })
-        if (record) success = true
-      } catch (error) {
-        console.error(error)
-      } finally {
-        disabled = false
-      }
-    }
-
-    $effect(() => {
-      os = checked ? "ios" : "android"
+    onMount(() => {
+      console.log("on mount")
+      setTimeout(() => {
+        console.log("calllback")
+        showTagline = true
+      }, 2000)
     })
 </script>
 
 <div class="max-w-screen-xl mx-auto px-4 lg:px-0">
-  <div class="min-h-[90vh] grid grid-cols-2 gap-4 items-center">
+  <div class="min-h-[91vh] grid md:grid-cols-2 gap-4 items-center">
     <h1 class="h1xlnormal">
       <span class="h1xl">
         Stop waiting for an algorithm to tell you who to meet.  </span>
-        <span>
-          Find them yourself.
-        </span>
+
+        {#if showTagline}
+          <span class="inline-block" in:fade>
+            Find them yourself.
+          </span>
+        {/if}
     </h1>
 
     <SearchAnimation />
   </div>
 </div>
 
-<form onsubmit={onSubmit} action="/" class="signup-form flex flex-col gap-4 w-screen p-8 sm:w-auto sm:min-w-[400px]">
-  <div class="w-full">
-    <Label for="email" class="mb-2">Sign up for early access</Label>
-    <Input bind:value={email} type="text" id="email" placeholder="you@me.us" required />
-  </div>
+<Ticker items={[
+  { title: "Club Chess" },
+  { title: "Wes Anderson Fans" },
+  { title: "Conferencegoers" },
+  { title: "Freud Brunch" },
+  { title: "Virginia Woolf Book Club" },
+  { title: "Tennis Partners" },
+]}>
+  <button>Click Me</button>
+  <span style="margin: 0 1rem;">Some scrolling text...</span>
+  <a href="https://example.com" target="_blank">Visit Example</a>
+</Ticker>
 
-  <div class="flex flex-col items-stretch">
-    <Label for="cell" class="mb-2">Operating system</Label>
-  <div class="flex justify-center items-center">
-    <small>Android</small>
-    <div class="ml-2">
-      <Toggle size="large" bind:checked></Toggle>
+<div class="max-w-screen-xl mx-auto px-4 lg:px-0">
+  <div class="min-h-[90vh] grid md:grid-cols-2 gap-4 items-center">
+    <div class="relative">
+      <div class="w-full absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rotate-[7deg] scale-[0.6]">
+
+        <img class="w-full " src="/profile.svg" alt="Anna's Profile on Refs">
+      </div>
     </div>
-    <small>iOS</small>
+
+    <div class="flex flex-col gap-4">
+      <h1 class="h1xl">
+        Refs is a phonebook for the internet. 
+      </h1>
+      <h2 class="h2">
+        Create a grid full of links, photos, places, interests.<wbr>
+        Then search for anyone by the refs they add!
+      </h2>
     </div>
   </div>
-  <div class="flex flex-col items-start">
-    <Label for="cell" class="mb-2">Phone number</Label>
-    <Input bind:value={cell} type="tel" id="cell" placeholder="123-45-678" pattern={"[0-9]{3}-[0-9]{2}-[0-9]{3}"} required />
-  </div>
-
-  <Button onclick={onSubmit} {disabled}>Submit</Button>
-</form>
-
-{#if success}
-  <div onclick={() => { success = false }} class="fixed inset-0 flex flex-col justify-center items-center bg-[#efede3]/10 backdrop-blur-sm">
-    <div class="bg-white drop-shadow-lg w-[460px] h-[140px] flex flex-col justify-center items-center text-center inter-500 rounded-md">
-      <h1 class="mb-2 rounded-sm">Thanks for signing up!<br><br> We'll send you an invitation to our beta soon</h1>
-    </div>
-  </div>
-{/if}
-
-<style>
-  .signup-form {
-    display: flex;
-    flex-flow: column nowrap;
-  }
-
-  .l {
-    font-size: 2rem;
-  }
-</style>
+</div>

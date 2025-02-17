@@ -1,6 +1,15 @@
 <script lang="ts">
+  import { typewriter } from "$lib/transitions"
+  import { onMount } from "svelte"
+  import { fade } from "svelte/transition"
+  import { flip } from "svelte/animate"
+
   let placeholder = "Search anything or paste a link!"  
-  let searchTerm = ""
+  let searchTerm = placeholder
+
+  let index = 0
+
+  let interval: ReturnType<typeof setInterval>
 
   const terms=  [
     "Tennis partners",
@@ -8,7 +17,39 @@
     "Chess club + Wes Anderson"
   ]
 
-  let results = [
+  function shuffle(array) {
+  let currentIndex = array.length;
+
+  // While there remain elements to shuffle...
+  while (currentIndex != 0) {
+
+    // Pick a remaining element...
+    let randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    // And swap it with the current element.
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex], array[currentIndex]];
+  }
+}
+
+
+  const nextTerm = () => {
+    searchTerm = terms[index++ % terms.length]
+
+    // Set the results
+    results = []
+
+    setTimeout(() => {
+      const resultsLength = Math.ceil(2 + Math.random() * 2)
+      
+      shuffle(people)
+  
+      results = [...people].slice(0, resultsLength)
+    }, 200)
+  }
+
+  let people = [
     {
       name: "Noëmie",
       location: "West Village, NYC",
@@ -59,20 +100,33 @@
     },
   ]
 
+  let results = []
+
+  onMount(() => {
+    setTimeout(() => {
+      interval = setInterval(nextTerm, 9000)
+      nextTerm()
+    }, 2000)
+
+    return () => clearInterval(setInterval)
+  })
 </script>
 
-<div class="rounded-xl">
-  <div class="relative max-w-screen-sm h-20">
+
+<div class="rounded-xl w-[90vw] md:w-auto min-h-[580px] translate-x-10 md:translate-x-12 -rotate-[7deg]">
+  <div class="relative max-w-screen-sm h-24 overflow-hidden">
     <div class="border-2 rounded-full border-black p-2 flex items-center gap-4 absolute w-full bg-surface z-10">
       <img class="w-12 h-12" src="/icon.png" alt="Refs" >
-      <p class="text-black/50 text-xl" id="">{placeholder}</p>
+        {#key searchTerm}
+          <p class:opacity-50={searchTerm === placeholder} class="text-xl" in:typewriter={{ delay: 200, speed: 20 }} out:typewriter={{ speed: 7 }}>{searchTerm}</p>
+        {/key}
     </div>
     <div class="border-2 rounded-full border-black p-1 flex items-center gap-4 absolute w-full h-16 scale-y-125 origin-top bg-black z-0"></div>
   </div>
 
-  <div class="flex flex-col gap-4 py-4 w-full">
-    {#each results as person (person.name)}
-      <div class="flex gap-4 w-full items-center">
+  <div class="flex flex-col gap-4 py-4 w-full h-40">
+    {#each results as person, i (person.name)}
+      <div animate:flip={{ duration: 100 }} in:fade={{delay: 900 +  i * 100}} out:fade={{ duration: 100 }} class="flex gap-4 w-full items-center">
         <img class="w-20 h-20 basis-20 shrink-0 aspect-square rounded-xl overflow-hidden object-cover" src="/people/{person.number}.jpg" alt="{person.name}" >
         <div class="flex flex-col w-full">
           <h2 class="text-lg">{person.name}</h2>
