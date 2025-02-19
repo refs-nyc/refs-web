@@ -29,7 +29,7 @@
   <!-- <div class="border-2 rounded-full border-black p-2 flex items-center gap-4 absolute w-full bg-surface z-10"></div> -->
   <div
     style:transform="translateY({translations[mouseState]}px)"
-    bind:clientHeight class="flex gap-2 items-center justify-center pt-2 pb-3 px-4 rounded-full border-2 border-black bg-surface relative z-10 transition-transform">
+    bind:clientHeight class="flex gap-2 items-center justify-center pt-2 pb-3 px-4 rounded-full border-2 border-black bg-surface relative z-10 transition-transform {widthClass}">
     {#if icon}
       <img class="w-12 h-12" src="/icon.png" alt="Refs" >
     {/if}
@@ -40,5 +40,5 @@
   <div
     style:height="{clientHeight + depth}px"
     style:transform="scaleY({scales[mouseState]})"
-    class="border-2 origin-bottom transition-all rounded-full border-black p-1 flex items-center gap-4 absolute top-0 z-0 w-full h-full bg-black"></div> 
+    class="border-2 origin-bottom transition-all rounded-full border-black p-1 flex items-center gap-4 absolute top-0 z-0 {widthClass} h-full bg-black"></div> 
 </a>
