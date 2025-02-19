@@ -11,11 +11,11 @@
   {/each}
 {/snippet}
 
-<div class="text-center text-accent mx-auto font-semibold text-lg my-12">
+<div class="text-center text-accent mx-auto font-semibold text-lg my-6 sm:my-12">
   The world needs more
 </div>
 
-<div class="relative flex overflow-x-hidden w-screen border border-accent py-4 mb-40">
+<div class="relative flex overflow-x-hidden w-screen border border-accent py-4 mb-8">
   <div class="animate-marquee whitespace-nowrap">
     {@render buttons()}
   </div>

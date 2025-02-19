@@ -113,7 +113,7 @@
 </script>
 
 
-<div class="rounded-xl w-[90vw] md:w-auto min-h-[420px] translate-x-10 md:translate-x-12 -rotate-[7deg]">
+<div class="rounded-xl w-[90vw] md:w-auto min-h-[480px] translate-x-10 md:translate-x-12 -rotate-[7deg]">
   <div class="relative max-w-screen-sm h-24 overflow-hidden">
     <div class="border-2 rounded-full border-black p-2 flex items-center gap-4 absolute w-full bg-surface z-10">
       <img class="w-12 h-12" src="/icon.png" alt="Refs" >
