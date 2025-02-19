@@ -7,9 +7,19 @@
         ],
         "components": [
           {
+            "exclude": true,
+            "/": "/",
+            "comment": "Exclude the home page"
+          },
+          {
+            "exclude": true,
+            "/": "/about",
+            "comment": "Exclude about page"
+          },
+          {
             "/": "*",
             "comment": "Matches all routes"
-          }
+          },
         ]
       }
     ]

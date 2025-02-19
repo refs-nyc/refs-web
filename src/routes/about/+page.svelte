@@ -15,8 +15,8 @@
   This is exactly what we’re building with Refs– a <span class="font-bold">phonebook for the internet</span>. We think of it as an open network of mini personal websites, all searchable to each other. Anyone can opt-in to being found for whatever they like, and run searches, simple or complex, to find each other. Moms looking for a new parents group. Designers looking for cofounders. Our friend Paul looking for a girl who likes rock climbing, video games, and Icelandic food— nobody should have to squint at forums and comment sections, or swipe through thousands of profiles, to find the people they share life with. We deserve a starting point for great encounters. We hope you’ll find it useful.<br><br>
   
   
-  <span class="font-bold">
+  <!-- <span class="font-bold">
     PS— 
   </span>if you’d like to join the cause, we’re team@refs.nyc
-  </p>
+  </p> -->
 </div>
