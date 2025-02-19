@@ -15,6 +15,7 @@
 	--grey1: #d9d9d9;
 	--grey2: #787676;
 	--muted: #787676;
+	--muted-light: #7A7A7A;
 	--none: transparent;
 	--red: #f00;
 }
@@ -70,5 +71,8 @@
 
   .h2 {
     @apply text-3xl font-bold leading-normal;
+  }
+  .h2normal {
+    @apply text-3xl font-normal leading-normal;
   }
 }

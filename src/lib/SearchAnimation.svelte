@@ -4,11 +4,10 @@
   import { fade } from "svelte/transition"
   import { flip } from "svelte/animate"
 
-  let placeholder = "Search anything or paste a link!"  
-  let searchTerm = placeholder
-
-  let index = 0
-
+  let placeholder = $state("Search anything or paste a link!")
+  let searchTerm = $state(placeholder)
+  let index = $state(0)
+  let results = $state([])
   let interval: ReturnType<typeof setInterval>
 
   const terms=  [
@@ -16,39 +15,6 @@
     "Hardware founders",
     "Chess club + Wes Anderson"
   ]
-
-  function shuffle(array) {
-  let currentIndex = array.length;
-
-  // While there remain elements to shuffle...
-  while (currentIndex != 0) {
-
-    // Pick a remaining element...
-    let randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex--;
-
-    // And swap it with the current element.
-    [array[currentIndex], array[randomIndex]] = [
-      array[randomIndex], array[currentIndex]];
-  }
-}
-
-
-  const nextTerm = () => {
-    searchTerm = terms[index++ % terms.length]
-
-    // Set the results
-    results = []
-
-    setTimeout(() => {
-      const resultsLength = Math.ceil(2 + Math.random() * 2)
-      
-      shuffle(people)
-  
-      results = [...people].slice(0, resultsLength)
-    }, 200)
-  }
-
   let people = [
     {
       name: "Noëmie",
@@ -99,12 +65,46 @@
       number: 6
     },
   ]
+      
+  shuffle(people)
 
-  let results = []
+  results = [...people].slice(0, 4)
+
+  function shuffle(array) {
+    let currentIndex = array.length;
+
+    // While there remain elements to shuffle...
+    while (currentIndex != 0) {
+
+      // Pick a remaining element...
+      let randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+
+      // And swap it with the current element.
+      [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex], array[currentIndex]];
+    }
+  }
+
+  const nextTerm = () => {
+    searchTerm = terms[index++ % terms.length]
+
+    // Set the results
+    results = []
+
+    setTimeout(() => {
+      const resultsLength = Math.ceil(2 + Math.random() * 2)
+      
+      shuffle(people)
+  
+      results = [...people].slice(0, resultsLength)
+    }, 200)
+  }
+
 
   onMount(() => {
     setTimeout(() => {
-      interval = setInterval(nextTerm, 9000)
+      interval = setInterval(nextTerm, 5000)
       nextTerm()
     }, 2000)
 

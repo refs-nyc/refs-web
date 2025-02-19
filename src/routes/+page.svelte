@@ -4,18 +4,17 @@
   import { fade } from "svelte/transition"
 
 	import Ticker from '$lib/Ticker.svelte';
+	import HighButton from '$lib/HighButton.svelte';
   
   let showTagline = $state(false)
     
-
-
-    onMount(() => {
-      console.log("on mount")
-      setTimeout(() => {
-        console.log("calllback")
-        showTagline = true
-      }, 2000)
-    })
+  onMount(() => {
+    console.log("on mount")
+    setTimeout(() => {
+      console.log("calllback")
+      showTagline = true
+    }, 2000)
+  })
 </script>
 
 <div class="max-w-screen-xl mx-auto px-4 lg:px-0">
@@ -58,13 +57,14 @@
     </div>
 
     <div class="flex flex-col gap-4">
-      <h1 class="h1xl">
+      <h1 class="h1xl text-accent">
         Refs is a phonebook for the internet. 
       </h1>
-      <h2 class="h2">
-        Create a grid full of links, photos, places, interests.<wbr>
-        Then search for anyone by the refs they add!
+      <h2 class="h2normal">
+        Create a grid full of links, <span class="font-bold">photos, places, interests.</span><br>
+        Then <span class="font-bold">search for anyone</span> by the refs they add!
       </h2>
+      <HighButton label="Download" link="#download"></HighButton>
     </div>
   </div>
 </div>

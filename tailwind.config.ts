@@ -39,6 +39,8 @@ export default {
         accent2: 'var(--accent2)',
         surface: 'var(--surface)',
         surface2: 'var(--surface2)',
+        muted: 'var(--muted)',
+        'muted-light': 'var(--muted-light)',
       }
     }
 	},
