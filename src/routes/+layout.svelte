@@ -2,8 +2,8 @@
   import { Toggle } from 'flowbite-svelte';
   import { goto } from "$app/navigation"
   import { page } from "$app/state"
+  import { scale, fade } from "svelte/transition"
   import PocketBase from 'pocketbase'
-  import { fade } from "svelte/transition"
   import Icon from "@iconify/svelte";
 
   import { Input, Label, Button } from 'flowbite-svelte';
@@ -56,15 +56,14 @@
 
 <Navigation />
 
-<div class="layout overflow-y-scroll w-screen inter-400 overflow-x-hidden">
-	{@render children()}
-</div>
+
+{@render children()}
 
 <!-- Sign up form -->
 {#if showPopup && !success}
-<div transition:fade class="fixed inset-0 z-20 flex flex-col justify-center items-center ">
-  <div onclick={(e) => goto(page.url.pathname, { noScroll: true })} class="absolute inset-0 z-10 bg-black/30"></div>
-  <form onsubmit={onSubmit} action="/" class="signup-form flex flex-col gap-4 w-screen p-8 sm:w-auto sm:min-w-[400px] bg-surface rounded-sm z-20 relative">
+<div class="fixed inset-0 z-20 flex flex-col justify-center items-center ">
+  <div transition:fade onclick={(e) => goto(page.url.pathname, { noScroll: true })} class="absolute inset-0 z-10 bg-black/30"></div>
+  <form transition:scale onsubmit={onSubmit} action="/" class="signup-form flex flex-col gap-4 w-screen p-8 sm:w-auto sm:min-w-[400px] bg-surface rounded-sm z-20 relative">
     <div class="w-full">
       <Label for="email" class="mb-2">Sign up for early access</Label>
       <Input bind:value={email} type="text" id="email" placeholder="you@me.us" required />
@@ -91,9 +90,9 @@
 </div>
 {/if}
 {#if showPopup && success}
-<div transition:fade class="fixed inset-0 z-20 flex flex-col justify-center items-center ">
-  <div onclick={(e) => goto(page.url.pathname, { noScroll: true })} class="absolute inset-0 z-10 bg-black/30"></div>
-  <div class="flex flex-col gap-4 w-screen p-8 sm:w-auto sm:min-w-[400px] bg-surface rounded-sm z-20 relative">
+<div class="fixed inset-0 z-20 flex flex-col justify-center items-center ">
+  <div transition:fade onclick={(e) => goto(page.url.pathname, { noScroll: true })} class="absolute inset-0 z-10 bg-black/30"></div>
+  <div transition:scale class="flex flex-col gap-4 w-screen p-8 sm:w-auto sm:min-w-[400px] bg-surface rounded-sm z-20 relative">
     <h1 class="mb-2 rounded-sm">Thanks for signing up!<br><br> We'll send you an invitation to our beta soon</h1>
   </div>
 </div>

@@ -2,7 +2,7 @@
   
 </script>
 
-<div class="fixed top-0 w-screen p-4 z-10 overflow-hidden">
+<div class="fixed bg-surface sm:bg-transparent top-0 w-screen p-4 z-10 overflow-hidden">
   <div class="max-w-screen-xl flex mx-auto justify-between items-center">
     <a href="/">
       <h1 class="h2 sm:h1">Refs</h1>

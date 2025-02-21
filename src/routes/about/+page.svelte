@@ -4,8 +4,8 @@
 
 </script>
 
-<div class="max-w-screen-xl mx-auto px-4 lg:px-0 mt-40">
-  <p class="whitespace-pre-line w-full max-w-screen-md text-lg">
+<div class="max-w-screen-xl mx-auto px-4 lg:px-0 mt-40 flex flex-col justify-center">
+  <p class="whitespace-pre-line w-full max-w-screen-md text-lg mx-auto">
     <span class="font-bold">
       It feels better to find someone than to have them found for us.
     </span>

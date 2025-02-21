@@ -11,7 +11,7 @@
   {/each}
 {/snippet}
 
-<div class="text-center text-accent mx-auto font-semibold text-lg my-6 sm:my-12">
+<div class="text-center text-accent mx-auto font-semibold text-2xl my-6 sm:my-12">
   The world needs more
 </div>
 

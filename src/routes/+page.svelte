@@ -17,14 +17,14 @@
   })
 </script>
 
-<div class="mt-32 lg:mt-0 max-w-screen-xl mx-auto px-4 lg:px-0">
+<div class="mt-32 lg:mt-0 max-w-screen-xl mx-auto px-4 lg:px-0 ">
   <div class="min-h-[75vh] grid md:grid-cols-2 gap-4 items-center">
     <h1 class="h1xlnormal mb-20 sm:mb-0">
       <span class="h1xl">
         Stop waiting for an algorithm to tell you who to meet.  </span>
 
         {#if showTagline}
-          <span class="inline-block" in:fade>
+          <span class="text-accent font-bold" in:fade>
             Find them yourself.
           </span>
         {/if}
@@ -49,20 +49,20 @@
   <a href="https://example.com" target="_blank">Visit Example</a>
 </Ticker>
 
-<div class="max-w-screen-xl mx-auto px-4 lg:px-0">
+<div class="max-w-screen-xl mx-auto overflow-hidden px-4 lg:px-0 ">
   <div class="min-h-[90vh] grid md:grid-cols-2 gap-4 items-center">
     <div class="relative h-[70dvh] md:h-auto sm:-translate-x-32">
-      <div class="w-full absolute sm:left-1/2 top-1/2 sm:-translate-x-32 lg:-translate-x-1/2 -translate-y-1/2 rotate-[7deg] scale-[0.8] lg:scale-[0.5]">
+      <div class="w-full absolute sm:left-1/2 top-1/2 sm:-translate-x-32 lg:-translate-x-1/2 -translate-y-[42%] rotate-[7deg] scale-[0.8] lg:scale-[0.5] overflow-hidden">
         <img class="w-full hidden sm:block" src="/SMOLPROFILE.png" alt="Anna's Profile on Refs">
         <img class="w-full sm:hidden aspect-[1/1.7] overflow-hidden object-cover object-top -translate-x-4 sm:-translate-x-0" src="/SMOLPROFILE.png" alt="Anna's Profile on Refs">
       </div>
     </div>
 
     <div class="flex mb-32 sm:mb-0 flex-col gap-12">
-      <h1 class="h1xl text-accent leading-[50px]">
+      <h1 class="mt-12 sm:mt-0 text-3xl leading-snug sm:text-5xl font-bold text-accent sm:leading-[50px]">
         Refs is a phonebook for the internet. 
       </h1>
-      <h2 class="h2normal leading-snug">
+      <h2 class="text-3xl font-bold leading-snug">
         Create a grid full of links, <span class="font-bold">photos, places, interests.</span><br class="mb-2">
 
         <span class="hidden sm:inline-block">
