@@ -21,13 +21,9 @@
   </span>if you’d like to join the cause, we’re team@refs.nyc -->
   </p>
 
-  <div class="mx-auto">
-    <div class="w-20">
-      <HighButton widthClass="w-32" label="Download" link="#download"></HighButton>
+  <div class="mx-auto mb-20">
+    <div class="w-32">
+      <HighButton widthClass="w-32" label="Sign up" link="#download"></HighButton>
     </div>
-  </div>
-
-  <div class="grid grid-cols-2">
-
   </div>
 </div>

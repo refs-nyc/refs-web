@@ -15,7 +15,7 @@
   The world needs more
 </div>
 
-<div class="relative flex overflow-x-hidden w-screen border border-accent py-4 mb-8">
+<div class="relative flex overflow-x-hidden w-screen border-t border-b border-accent py-4 mb-8">
   <div class="animate-marquee whitespace-nowrap">
     {@render buttons()}
   </div>

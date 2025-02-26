@@ -44,7 +44,7 @@
   }
   
   .btn {
-    @apply px-8 py-2 bg-accent text-white rounded-full font-semibold;
+    @apply px-4 sm:px-8 py-2 bg-accent text-white rounded-full font-semibold;
   }
   
   .btn-outline {
@@ -63,7 +63,7 @@
     @apply text-3xl;
   }
   .h1xl {
-    @apply text-5xl leading-snug font-bold;
+    @apply text-3xl sm:text-5xl leading-tight font-bold;
   }
   .h1xlnormal {
     @apply text-5xl;

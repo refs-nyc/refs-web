@@ -61,9 +61,9 @@
 
 <!-- Sign up form -->
 {#if showPopup && !success}
-<div class="fixed inset-0 z-20 flex flex-col justify-center items-center ">
+<div class="fixed inset-0 z-20 flex flex-col sm:justify-center items-center">
   <div transition:fade onclick={(e) => goto(page.url.pathname, { noScroll: true })} class="absolute inset-0 z-10 bg-black/30"></div>
-  <form transition:scale onsubmit={onSubmit} action="/" class="signup-form flex flex-col gap-4 w-screen p-8 sm:w-auto sm:min-w-[400px] bg-surface rounded-sm z-20 relative">
+  <form transition:scale onsubmit={onSubmit} action="/" class="signup-form flex flex-col gap-4 p-6 sm:p-8 sm:w-auto sm:min-w-[400px] w-72 bg-surface rounded-sm z-20 relative my-12">
     <div class="w-full">
       <Label for="email" class="mb-2">Sign up for early access</Label>
       <Input bind:value={email} type="text" id="email" placeholder="you@me.us" required />
@@ -90,7 +90,7 @@
 </div>
 {/if}
 {#if showPopup && success}
-<div class="fixed inset-0 z-20 flex flex-col justify-center items-center ">
+<div class="fixed inset-0 z-20 flex flex-col justify-center items-center">
   <div transition:fade onclick={(e) => goto(page.url.pathname, { noScroll: true })} class="absolute inset-0 z-10 bg-black/30"></div>
   <div transition:scale class="flex flex-col gap-4 w-screen p-8 sm:w-auto sm:min-w-[400px] bg-surface rounded-sm z-20 relative">
     <h1 class="mb-2 rounded-sm">Thanks for signing up!<br><br> We'll send you an invitation to our beta soon</h1>
@@ -112,11 +112,6 @@
 </footer>
 
 <style>
-  .signup-form {
-    display: flex;
-    flex-flow: column nowrap;
-    width: 400px;
-  }
 
   .l {
     font-size: 2rem;
