@@ -27,11 +27,9 @@
     <h1 class="h1xl mb-8 sm:mb-0">
       Stop waiting for an algorithm to tell you who to meet. 
 
-      {#if showTagline}
-        <span class="text-accent font-bold" in:fade>
-          Find them yourself.
-        </span>
-      {/if}
+      <span class:!opacity-100={showTagline} class="text-accent font-bold opacity-0 transition-opacity">
+        Find them yourself.
+      </span>
     </h1>
 
     <div class="mb-12 sm:mb-0">
@@ -92,7 +90,9 @@
         </div>
 
         <h2 class="sm:hidden h2normal leading-snug">
-        Then <span class="font-bold">search for anyone</span> by the refs they add!
+        <span class="w-full inline-block">
+          Then <span class="font-bold">search for anyone</span> by the refs they add!
+        </span>
       </h2>
       <HighButton label="Sign up" link="#download"></HighButton>
     </div>
