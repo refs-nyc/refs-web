@@ -22,7 +22,7 @@
   })
 </script>
 
-<div class="mt-32 lg:mt-0 max-w-screen-xl mx-auto px-4 lg:px-0 overflow-hidden">
+<div class="mt-32 lg:mt-0 max-w-screen-xl mx-auto px-4 lg:px-0">
   <div class="min-h-[75vh] grid md:grid-cols-2 gap-4 items-center">
     <h1 class="h1xl mb-8 sm:mb-0">
       Stop waiting for an algorithm to tell you who to meet. 
@@ -51,21 +51,21 @@
   <a href="https://example.com" target="_blank">Visit Example</a>
 </Ticker>
 
-<div class="max-w-screen-xl mx-auto overflow-hidden px-4 lg:px-0 ">
+<div class="max-w-screen-xl mx-auto px-4 lg:px-0 ">
   <div class="min-h-[90vh] grid md:grid-cols-2 gap-4 items-center">
-    <div class="relative h-[70dvh] md:h-auto sm:-translate-x-32">
-      <div class="w-full absolute sm:left-1/2 top-1/2 sm:-translate-x-32 lg:-translate-x-1/2 -translate-y-[42%] rotate-[7deg] scale-[0.8] lg:scale-[0.5] overflow-hidden">
-        <img class="w-full hidden sm:block" src="/SMOLPROFILE.png" alt="Anna's Profile on Refs">
-        <img class="w-full sm:hidden aspect-[1/1.7] overflow-hidden object-cover object-top -translate-x-4 sm:-translate-x-0" src="/SMOLPROFILE.png" alt="Anna's Profile on Refs">
+    <div class="relative h-[70dvh] md:h-auto">
+      <div class="w-full absolute sm:left-1/2 top-1/2 lg:-translate-x-1/2 -translate-y-1/2 lg:scale-[0.6]">
+        <img class="w-full hidden sm:block" src="/Profile2.png" alt="Anna's Profile on Refs">
+        <img class="w-full sm:hidden aspect-[1/1.7] overflow-hidden object-cover object-top -translate-x-4 sm:-translate-x-0" src="/Profile2.png" alt="Anna's Profile on Refs">
       </div>
     </div>
 
     <div class="flex mb-32 sm:mb-0 flex-col gap-12">
-      <h1 class="mt-12 sm:mt-0 h1xl text-accent sm:leading-[50px]">
+      <h1 class="mt-12 sm:mt-0 h1xl text-accent sm:leading-[50px] w-4/5 sm:w-auto">
         Refs is a phonebook for the internet. 
       </h1>
-      <h2 class="h1xl font-bold">
-        Create a grid full of links, <span class="font-bold">photos, places, interests.</span><br class="mb-2">
+      <h2 class="h2normal">
+        Create a grid full of <span class="font-bold">links, photos, places, interests.</span><br class="mb-2">
 
         <span class="hidden sm:inline-block">
           Then <span class="font-bold">search for anyone</span> by the refs they add!

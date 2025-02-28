@@ -60,13 +60,13 @@
     @apply text-3xl font-bold;
   }
   .h1normal {
-    @apply text-3xl;
+    @apply text-3xl font-normal;
   }
   .h1xl {
-    @apply text-3xl sm:text-5xl leading-tight font-bold;
+    @apply text-3xl sm:text-5xl leading-snug font-bold;
   }
   .h1xlnormal {
-    @apply text-5xl;
+    @apply text-3xl sm:text-5xl leading-snug font-normal;
   }
 
   .h2 {
